@@ -1,10 +1,9 @@
 import {Request, Response, Router} from "express";
+import { getItems } from "../controllers/character";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-    res.send({data: " Here goes the models"});
-})
+router.get("/", getItems);
 
 
 
