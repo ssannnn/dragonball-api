@@ -3,7 +3,7 @@ export interface Character {
     name: string;
     power_level: string;
     saga: string;
-    serie: string;
-    specie: string;
+    series: string;
+    species: string;
 
 }
