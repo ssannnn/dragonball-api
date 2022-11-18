@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getCharacters } from "../services/character";
+import { getCharacters, getCharacter } from "../services/character";
 import handleHttp from "../utils/error.handler";
 
 const getItems = async (req: Request, res: Response) => {
@@ -14,8 +14,11 @@ const getItems = async (req: Request, res: Response) => {
 }
 
 
-const getItem = (req: Request, res: Response) => {
+const getItem = async ({params}: Request, res: Response) => {
     try {
+        const {id} = params;
+        const response =  await getCharacter(id);
+        res.send(response);
         
     } catch (error) {
         handleHttp(res, "ERROR_GET_ITEM")

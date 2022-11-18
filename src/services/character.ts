@@ -6,8 +6,9 @@ const getCharacters = async () => {
     return responseCharacter;
 }
 
-const getCharacter = () => {
-
+const getCharacter = async (id:string) => {
+    const responseCharacter = await characterModel.findOne({ id: id });
+    return responseCharacter;
 }
 
 export {getCharacter, getCharacters};
