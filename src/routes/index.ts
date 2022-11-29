@@ -17,7 +17,7 @@ readdirSync(PATH_FINDER).filter((fileName) => {
     if (cleanName !== "index"){
         import(`./${cleanName}`).then((moduleRouter) => {
             //console.log(`testing /${cleanName}`)
-            router.use(`/${cleanName}`, moduleRouter.router);   
+            router.use(`/api/${cleanName}`, moduleRouter.router);   
         });
         }
 }) 
