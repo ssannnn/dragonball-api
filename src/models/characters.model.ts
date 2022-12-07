@@ -20,10 +20,13 @@ const CharacterSchema = new Schema<Character>(
         }, 
         "species":{
             type: String,
+        },
+        "image_url": {
+            type: String,
         } 
     }   
 );
 
-const characterModel = model("characters", CharacterSchema, "dragonball-api");
+const characterModel = model<Character>("characters", CharacterSchema, "dragon-restapi");
 
 export default characterModel;

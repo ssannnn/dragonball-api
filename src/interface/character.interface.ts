@@ -5,4 +5,5 @@ export interface Character {
     saga: string;
     series: string;
     species: string;
+    image_url: string;
 }
