@@ -27,6 +27,6 @@ const CharacterSchema = new Schema<Character>(
     }   
 );
 
-const characterModel = model<Character>("characters", CharacterSchema, "dragon-restapi");
+const characterModel = model<Character>("characters", CharacterSchema, "dragonball_dataset");
 
 export default characterModel;
