@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 import { Character } from "../interface/character.interface";
+import paginate from 'mongoose-paginate-v2';
 
 const CharacterSchema = new Schema<Character>(
     {
@@ -27,6 +29,8 @@ const CharacterSchema = new Schema<Character>(
     }   
 );
 
-const characterModel = model<Character>("characters", CharacterSchema, "dragonball_dataset");
+CharacterSchema.plugin(paginate);
+
+const characterModel = model<Character, mongoose.PaginateModel<Character>>("characters", CharacterSchema, "dragonball_dataset");
 
 export default characterModel;
