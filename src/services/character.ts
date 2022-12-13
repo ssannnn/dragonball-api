@@ -1,10 +1,13 @@
-
+import { Request } from "express";
 import characterModel from "../models/characters.model";
 
-const getCharacters = async () => {
+const getCharacters = async (req:Request) => {
+        
+    const page: number = parseInt(req.query.page as string, 10) || 1;
+
     const options = {
         select: ("-_id"),
-        page: 1,
+        page: page,
         limit: 10,
     };
       

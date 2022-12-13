@@ -4,7 +4,7 @@ import handleHttp from "../utils/error.handler";
 
 const getItems = async (req: Request, res: Response) => {
     try {
-        const response =  await getCharacters();
+        const response =  await getCharacters(req);
         res.send(response);
         
     } catch (error) {
